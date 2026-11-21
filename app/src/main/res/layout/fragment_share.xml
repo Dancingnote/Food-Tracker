@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffe9d0">
+
+    <!-- ── Main column (title + tabs + content) ── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#ffe9d0">
+
+        <!-- Title Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Share"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="#514438" />
+
+            <TextView
+                android:id="@+id/tv_family_code_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textSize="13sp"
+                android:textColor="#8A7B6E" />
+        </LinearLayout>
+
+        <!-- Tab Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tab_members"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Members"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#E58332"
+                android:paddingBottom="6dp"
+                android:background="@drawable/tab_indicator_selected" />
+
+            <!-- Group Chat tab — wrapped to allow badge overlay -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clipChildren="false">
+
+                <TextView
+                    android:id="@+id/tab_chat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Group Chat"
+                    android:textSize="14sp"
+                    android:textColor="#8A7B6E"
+                    android:paddingBottom="6dp"
+                    android:background="@drawable/tab_indicator_unselected" />
+
+                <!-- Unread badge — top-right of the tab -->
+                <TextView
+                    android:id="@+id/tab_chat_badge"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center_horizontal|top"
+                    android:layout_marginStart="60dp"
+                    android:gravity="center"
+                    android:textSize="9sp"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:background="@drawable/badge_bg"
+                    android:visibility="gone" />
+
+            </FrameLayout>
+        </LinearLayout>
+
+        <!-- Tab Content -->
+        <FrameLayout
+            android:id="@+id/family_tab_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <!-- Members Panel -->
+            <LinearLayout
+                android:id="@+id/panel_members"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="80dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="#fff7ef">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Your Family Code"
+                            android:textStyle="bold"
+                            android:textColor="#514438"
+                            android:textSize="13sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:id="@+id/tv_family_code"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="——"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="#E58332"
+                                android:letterSpacing="0.12" />
+
+                            <TextView
+                                android:id="@+id/btn_copy_code"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Copy"
+                                android:textColor="#FFFFFF"
+                                android:textStyle="bold"
+                                android:textSize="13sp"
+                                android:paddingHorizontal="14dp"
+                                android:paddingVertical="7dp"
+                                android:background="@drawable/save_btn_bg" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Share this code with family members so they can join your fridge."
+                            android:textSize="12sp"
+                            android:textColor="#8A7B6E"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="#fff7ef"
+                    android:layout_marginTop="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Join a Family"
+                            android:textStyle="bold"
+                            android:textColor="#514438"
+                            android:textSize="13sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="8dp">
+
+                            <EditText
+                                android:id="@+id/et_join_code"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:hint="Enter family code"
+                                android:textColorHint="#8A7B6E"
+                                android:textColor="#514438"
+                                android:textSize="14sp"
+                                android:paddingHorizontal="12dp"
+                                android:background="@drawable/stat_card_bg"
+                                android:inputType="textNoSuggestions"
+                                android:gravity="center_vertical"
+                                android:maxLines="1" />
+
+                            <TextView
+                                android:id="@+id/btn_join_family"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:text="Join"
+                                android:textColor="#FFFFFF"
+                                android:textStyle="bold"
+                                android:textSize="13sp"
+                                android:paddingHorizontal="14dp"
+                                android:gravity="center"
+                                android:background="@drawable/save_btn_bg"
+                                android:layout_marginStart="8dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Members"
+                    android:textStyle="bold"
+                    android:textColor="#514438"
+                    android:textSize="14sp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="4dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_members"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <!-- Chat Panel — just the message list, no input here -->
+            <LinearLayout
+                android:id="@+id/panel_chat"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_chat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="132dp"
+                    android:clipToPadding="false" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <!-- ── Input bar — floating card above the nav bar ── -->
+    <LinearLayout
+        android:id="@+id/ll_chat_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="76dp"
+        android:layout_marginHorizontal="16dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="8dp"
+        android:background="@drawable/msg_input_bg"
+        android:elevation="6dp"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/et_message"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:hint="Type a message..."
+            android:textColorHint="#B0A090"
+            android:textColor="#514438"
+            android:textSize="14sp"
+            android:paddingHorizontal="12dp"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:imeOptions="actionSend" />
+
+        <TextView
+            android:id="@+id/btn_send"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="➤"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:background="@drawable/save_btn_bg"
+            android:layout_marginStart="4dp" />
+
+    </LinearLayout>
+
+</FrameLayout>

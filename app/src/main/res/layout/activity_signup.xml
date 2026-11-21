@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/login_page">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000" />
+
+    <RelativeLayout
+        android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="150dp"
+            android:orientation="vertical"
+            android:padding="35dp">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Get Started Today!"
+                android:textSize="35sp"
+                android:textColor="#F5F5F5"
+                android:fontFamily="sans-serif-medium"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_marginTop="30dp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:hint="Username"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#CCFFFFFF"
+                android:background="@drawable/input_bg"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Username cannot be changed"
+                android:textColor="#CCFFFFFF"
+                android:textSize="12sp"
+                android:layout_marginTop="6dp" />
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:hint="Password"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#CCFFFFFF"
+                android:background="@drawable/input_bg"
+                android:inputType="textPassword"/>
+
+            <EditText
+                android:id="@+id/pwd"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:hint="Confirm Password"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#CCFFFFFF"
+                android:background="@drawable/input_bg"
+                android:inputType="textPassword"/>
+
+            <Button
+                android:id="@+id/btn_sign_up"
+                android:layout_marginTop="17dp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="Sign Up"
+                android:textSize="23sp"
+                android:textColor="#F5F5F5"
+                android:backgroundTint="@color/accent_orange"
+                app:cornerRadius="12dp"
+                android:elevation="8dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_terms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="By logging in, you agree to the Terms of Service"
+            android:textSize="12sp"
+            android:textColor="#ffffff"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

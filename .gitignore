@@ -1,0 +1,29 @@
+
+# macOS
+.DS_Store
+
+# Android Studio / IntelliJ IDEA
+.idea/
+*.iml
+
+# Gradle caches
+.gradle/
+.kotlin/
+
+# Generated build outputs
+**/build/
+# Local machine configuration
+local.properties
+
+# Environment variables and secrets
+.env
+.env.*
+*.jks
+*.keystore
+
+# Generated application packages
+*.apk
+*.aab
+
+# Logs
+*.log

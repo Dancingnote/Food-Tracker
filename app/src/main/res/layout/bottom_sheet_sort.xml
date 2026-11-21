@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="0dp"
+    android:orientation="vertical"
+    android:background="@android:color/transparent">
+
+    <!-- Card container -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="22dp"
+        app:cardElevation="0dp"
+        app:cardUseCompatPadding="false"
+        app:cardPreventCornerOverlap="false"
+        app:cardBackgroundColor="#fff7ef">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- TOP BAR -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sort By"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#514438"
+                    android:layout_alignParentStart="true" />
+
+                <ImageView
+                    android:id="@+id/btn_close"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_close"
+                    android:padding="4dp" />
+            </RelativeLayout>
+
+            <!-- spacing -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <!-- ================= OPTIONS ================= -->
+
+            <!-- RECENTLY ADDED -->
+            <LinearLayout
+                android:id="@+id/sort_recent"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <RadioButton
+                    android:id="@+id/rb_recent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Recently Added"
+                    android:textColor="#514438"
+                    android:paddingStart="8dp" />
+
+                <ImageView
+                    android:id="@+id/iv_order_recent"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_arrow_up"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+            <!-- NAME -->
+            <LinearLayout
+                android:id="@+id/sort_name"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <RadioButton
+                    android:id="@+id/rb_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Name"
+                    android:textColor="#514438"
+                    android:paddingStart="8dp" />
+
+                <ImageView
+                    android:id="@+id/iv_order_name"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_arrow_up"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+            <!-- STOCK -->
+            <LinearLayout
+                android:id="@+id/sort_stock"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <RadioButton
+                    android:id="@+id/rb_stock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Remaining Stock"
+                    android:textColor="#514438"
+                    android:paddingStart="8dp" />
+
+                <ImageView
+                    android:id="@+id/iv_order_stock"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_arrow_up"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+            <!-- EXPIRY -->
+            <LinearLayout
+                android:id="@+id/sort_expire"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <RadioButton
+                    android:id="@+id/rb_expire"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Expire Date"
+                    android:textColor="#514438"
+                    android:paddingStart="8dp" />
+
+                <ImageView
+                    android:id="@+id/iv_order_expire"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_arrow_up"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+            <!-- NEAR EXPIRE -->
+            <LinearLayout
+                android:id="@+id/sort_near_expire"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <RadioButton
+                    android:id="@+id/rb_near_expire"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Near Expiry"
+                    android:textColor="#514438"
+                    android:paddingStart="8dp" />
+
+                <ImageView
+                    android:id="@+id/iv_order_near_expire"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_arrow_up"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

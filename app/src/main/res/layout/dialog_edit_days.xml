@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp"
+    android:paddingTop="24dp"
+    android:paddingBottom="8dp">
+
+    <!-- Category title -->
+    <TextView
+        android:id="@+id/dlg_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#3D2E24"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.01" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:id="@+id/dlg_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="#A08878"
+        android:textSize="13sp" />
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="20dp"
+        android:background="#EDE0D4" />
+
+    <!-- Stepper row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!-- Minus button -->
+        <TextView
+            android:id="@+id/dlg_btn_minus"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:gravity="center"
+            android:text="−"
+            android:textSize="24sp"
+            android:textColor="#C87020"
+            android:background="@drawable/dlg_stepper_btn_bg"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <!-- Number input box -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_weight="1"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="14dp"
+            android:background="@drawable/dlg_input_bg">
+
+            <EditText
+                android:id="@+id/dlg_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="4"
+                android:background="@null"
+                android:textColor="#3D2E24"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:textCursorDrawable="@null"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp" />
+
+        </FrameLayout>
+
+        <!-- Plus button -->
+        <TextView
+            android:id="@+id/dlg_btn_plus"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:gravity="center"
+            android:text="+"
+            android:textSize="24sp"
+            android:textColor="#C87020"
+            android:background="@drawable/dlg_stepper_btn_bg"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </LinearLayout>
+
+    <!-- "days" label -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="days"
+        android:textColor="#A08878"
+        android:textSize="14sp"
+        android:letterSpacing="0.05" />
+
+    <!-- Default hint -->
+    <TextView
+        android:id="@+id/dlg_default_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:gravity="center"
+        android:textColor="#C8B8A8"
+        android:textSize="12sp" />
+
+    <!-- Bottom spacing -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+</LinearLayout>
