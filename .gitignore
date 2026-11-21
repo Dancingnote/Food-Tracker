@@ -12,6 +12,7 @@
 
 # Generated build outputs
 **/build/
+
 # Local machine configuration
 local.properties
 
